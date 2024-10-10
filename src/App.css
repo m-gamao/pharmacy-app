@@ -1,38 +1,140 @@
-.App {
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.app-header {
   text-align: center;
+  padding: 20px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-header h1 {
+  font-size: 2.5rem;
+  color: #1e88e5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Search section */
+.search-section {
+  margin: 30px 0;
+}
+
+.search-section input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.search-section ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.search-section li {
+  background-color: #1e88e5;
   color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.search-section li:hover {
+  background-color: #005cb2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* About section */
+.about-section {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app-header h1 {
+    font-size: 2rem;
   }
+
+  .app-description {
+    font-size: 1rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-section p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Dropdown styles */
+.search-section ul {
+  padding: 0;
+  list-style-type: none;
+  max-height: 200px;
+  overflow-y: auto; /* Enable scrolling for long lists */
+  border: 1px solid #ccc; /* Add a border to separate the dropdown */
+  background-color: white; /* Set background color for visibility */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.search-section li {
+  padding: 10px;
+  background-color: white; /* Ensure background is white */
+  color: #333; /* Change text color to dark */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.search-section li:hover {
+  background-color: #f1f1f1; /* Slight hover effect */
 }

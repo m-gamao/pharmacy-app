@@ -1,0 +1,1 @@
+export const RX_API_URL=https://rxnav.nlm.nih.gov/REST/drugs.json
