@@ -1,3 +1,12 @@
+To interact with this app, please go to:
+https://pharmacy-app-6ee9fc6c82fa.herokuapp.com/
+
+Currently, the app is able to help you identify medications using the RxNorm API. There are some medications that go by their brand names and might not be recognizable in the system yet. But if you use the generic name, then it will come up.
+
+
+
+***************************************************
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
