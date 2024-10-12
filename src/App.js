@@ -5,6 +5,7 @@ import './App.css'; // Separate CSS file for styling
 
 const App = () => {
   const [medications, setMedications] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(''); // New state for search term
 
   // Function to add a medication to the list
   const addMedication = (medication) => {
@@ -16,26 +17,41 @@ const App = () => {
     setMedications([]);
   };
 
+  // Function to clear the search term
+  const clearSearchTerm = () => {
+    setSearchTerm(''); // Reset the search term to an empty string
+  };
+
   return (
     <div className="app-container">
       <header className="app-header">
         <h1>Medication Finder</h1>
       </header>
-
+        
       <section className="search-section">
         <p className="app-description">
           Enter the name of a medication to search the RxNorm medication database.
         </p>
-        <DrugSearchDropdown onDrugSelect={addMedication} />
+        <DrugSearchDropdown 
+          onDrugSelect={addMedication} 
+          searchTerm={searchTerm} // Pass the search term
+          setSearchTerm={setSearchTerm} // Pass the setter for the search term
+        />
+        {searchTerm && ( // Only show the clear search button if there's a term
+          <button className="clear-search-btn" onClick={clearSearchTerm}>
+            Clear Search
+          </button>
+        )}
         <MedicationList medications={medications} />
-        {medications.length > 0 && (
-          <button className="clear-btn" onClick={clearMedications}>
+      </section>
+      {medications.length > 0 && (
+          <button className="clear-meds-btn" onClick={clearMedications}>
             Clear Results
           </button>
         )}
-      </section>
 
       <section className="about-section">
+
         <h3>About this app</h3>
         <p>
           This app provides the RxCUI (RxNorm concept unique identifier) from the RxNorm database. 
